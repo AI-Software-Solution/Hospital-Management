@@ -90,16 +90,27 @@ WSGI_APPLICATION = 'docappsystem.wsgi.application'
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
+# # }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'medicine',
+#         'USER': 'root',
+#         'PASSWORD': 'jamshid0147',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+        
+#     }
 # }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'medicine',
-        'USER': 'root',
-        'PASSWORD': 'jamshid0147',
-        'HOST': 'localhost',
-        'PORT': '3306',
-        
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('db_name'),
+        'USER': os.getenv('db_user'),
+        'PASSWORD': os.getenv('db_pass'),
+        'HOST': os.getenv('db_host'),
+        'PORT': os.getenv('db_port'),
+
     }
 }
 
